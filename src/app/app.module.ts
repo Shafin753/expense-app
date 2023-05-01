@@ -19,8 +19,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     provideFirestore(() => getFirestore()),
     BrowserAnimationsModule,
     MatSlideToggleModule,
-    //initializeApp(environment.firbaseConfig),
-    //AngularFireDatabaseModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
