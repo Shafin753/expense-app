@@ -1,7 +1,5 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
-
-
 # Compiled output
 /dist
 /tmp
@@ -10,7 +8,7 @@
 
 # Node
 /node_modules
-/env
+env/
 npm-debug.log
 yarn-error.log
 
