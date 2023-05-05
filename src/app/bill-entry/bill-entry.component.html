@@ -1,0 +1,13 @@
+<table class="example-full-width" cellspacing="0">
+    <tr>
+        <td><mat-form-field class="example-full-width">
+                <mat-label>Bill Title</mat-label>
+                <input (change)="billTitleUpdate($event)" matInput>
+            </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+                <mat-label>Amount</mat-label>
+                <input (change)="amountUpdateChange($event)" type="number" matInput>
+            </mat-form-field></td>
+    </tr>
+    <button (click)="submitData()" mat-raised-button color="primary">Enter</button>
+</table>

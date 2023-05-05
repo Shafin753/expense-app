@@ -7,6 +7,8 @@ import {
   doc,
   updateDoc,
 } from '@angular/fire/firestore';
+import { take, tap } from 'rxjs';
+import { FirebaseService } from './services/firebase.service';
 
 export interface Item {
   name: string;
@@ -19,20 +21,18 @@ export interface Item {
 })
 export class AppComponent implements OnInit {
   title = 'expense-app-2';
+  public billList: any[] = [];
 
-  constructor(private firestore: Firestore) {}
+  constructor(private firebaseService: FirebaseService) {}
 
   public ngOnInit(): void {
-    this.update();
-
-    const test = collection(this.firestore, 'list-of-expense');
-    let value = collectionData(test);
-    value.subscribe((value) => console.log(value[0]));
-  }
-
-  async update() {
-    const test2 = doc(this.firestore, '/list-of-expense/Wlz0U4Ws96xDR51kMQ68');
-    await updateDoc(test2, { newValue3: 400 });
-    //await setDoc(test2, { newValue: 400 });
+    this.firebaseService
+      .getAllBills()
+      .pipe(
+        tap((bills) => {
+          this.billList = bills;
+        })
+      )
+      .subscribe();
   }
 }

@@ -8,10 +8,16 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-//import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
+import { ExpenseTableComponent } from './expense-table/expense-table.component';
+import { BarChartComponent } from './bar-chart/bar-chart.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatInputModule } from '@angular/material/input';
+import { BillEntryComponent } from './bill-entry/bill-entry.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ExpenseTableComponent, BarChartComponent, BillEntryComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -19,6 +25,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     provideFirestore(() => getFirestore()),
     BrowserAnimationsModule,
     MatSlideToggleModule,
+    MatTableModule,
+    MatButtonModule,
+    MatGridListModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
