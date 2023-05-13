@@ -1,7 +1,15 @@
 <table class="example-full-width" cellspacing="0">
     <tr>
+        <td>
+            <mat-radio-group aria-label="Select an option">
+                <mat-radio-button checked="true" (change)="changeMoneyFlow($event)" value=2>Expense</mat-radio-button>
+                <mat-radio-button (change)="changeMoneyFlow($event)" value=1>Income</mat-radio-button>
+            </mat-radio-group>
+        </td>
+    </tr>
+    <tr>
         <td><mat-form-field class="example-full-width">
-                <mat-label>Bill Title</mat-label>
+                <mat-label>{{inputTitle}}</mat-label>
                 <input (change)="billTitleUpdate($event)" matInput>
             </mat-form-field></td>
         <td><mat-form-field class="example-full-width">
@@ -9,5 +17,5 @@
                 <input (change)="amountUpdateChange($event)" type="number" matInput>
             </mat-form-field></td>
     </tr>
-    <button (click)="submitData()" mat-raised-button color="primary">Enter</button>
 </table>
+<button class="button" (click)="submitData()" mat-raised-button color="primary">Enter</button>

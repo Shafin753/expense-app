@@ -14,21 +14,40 @@ import { ExpenseTableComponent } from './expense-table/expense-table.component';
 import { BarChartComponent } from './bar-chart/bar-chart.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatInputModule } from '@angular/material/input';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { BillEntryComponent } from './bill-entry/bill-entry.component';
+import { TitleComponent } from './title/title.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatRadioModule } from '@angular/material/radio';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 
 @NgModule({
-  declarations: [AppComponent, ExpenseTableComponent, BarChartComponent, BillEntryComponent],
+  declarations: [
+    AppComponent,
+    ExpenseTableComponent,
+    BarChartComponent,
+    BillEntryComponent,
+    TitleComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    provideFirebaseApp(() => initializeApp(environment.firbaseConfig)),
-    provideFirestore(() => getFirestore()),
+    //provideFirebaseApp(() => initializeApp(environment.firbaseConfig)),
+    //provideFirestore(() => getFirestore()),
+    AngularFireModule.initializeApp(environment.firbaseConfig),
+    AngularFirestoreModule.enablePersistence(),
+    AngularFireStorageModule,
     BrowserAnimationsModule,
     MatSlideToggleModule,
     MatTableModule,
     MatButtonModule,
     MatGridListModule,
     MatInputModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatRadioModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

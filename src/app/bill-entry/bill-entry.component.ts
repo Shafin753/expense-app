@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 import { FirebaseService } from '../services/firebase.service';
 
+enum MoneyFlow {
+  Income = 1,
+  Expense = 2,
+}
+
 @Component({
   selector: 'app-bill-entry',
   templateUrl: './bill-entry.component.html',
@@ -9,6 +14,8 @@ import { FirebaseService } from '../services/firebase.service';
 export class BillEntryComponent {
   public billTitle!: string;
   public amount!: number;
+  public moneyFlowType: number = MoneyFlow.Expense;
+  public inputTitle: string = 'Bill Title';
 
   constructor(private firebaseService: FirebaseService) {}
 
@@ -23,6 +30,19 @@ export class BillEntryComponent {
   }
 
   public submitData() {
-    this.firebaseService.addNewBill(this.billTitle, this.amount);
+    this.firebaseService.addNewBill(
+      this.billTitle,
+      this.amount,
+      this.moneyFlowType
+    );
+  }
+
+  public changeMoneyFlow(event: any) {
+    this.moneyFlowType = parseInt(event.value);
+    if (parseInt(event.value) === MoneyFlow.Income) {
+      this.inputTitle = 'Income';
+    } else {
+      this.inputTitle = 'Bill Title';
+    }
   }
 }

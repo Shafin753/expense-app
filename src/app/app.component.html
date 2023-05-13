@@ -24,6 +24,7 @@
 </mat-grid-list> -->
 
 <div class="container">
+  <div style="display: flex"><app-title class="item" style="width:100%"></app-title></div>
   <div style="  display: flex;
   flex-direction: row;">
     <header class="item header">Header</header>
@@ -34,7 +35,7 @@
   <main>
     <app-expense-table class="item sidebar-left" [billList]="billList"></app-expense-table>
     <app-bar-chart class="item sidebar-right" [billList]="billList"></app-bar-chart>
-    <article class="item">Article</article>
+    <!-- <article class="item">Article</article> -->
     <!-- <aside class="item sidebar-left">Left sidebar</aside>
     <aside class="item sidebar-right">Right sidebar</aside> -->
   </main>

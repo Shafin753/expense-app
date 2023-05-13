@@ -34,5 +34,6 @@ export class AppComponent implements OnInit {
         })
       )
       .subscribe();
+    //this.billList = this.firebaseService.getAllBills().valueChanges().
   }
 }

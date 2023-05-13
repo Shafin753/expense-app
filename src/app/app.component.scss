@@ -12,7 +12,7 @@ main {
   padding: 3rem 1rem;
   background: #dfeffd;
   border: 3px solid #457fdc;
-  color: #457fdc;
+  //color: #457fdc;
   margin: 6px;
 }
 
@@ -28,13 +28,13 @@ main {
 
 .sidebar-left {
   order: 1;
-  flex: 3;
+  flex: 1.5;
 }
 article {
   order: 2;
   flex: 2;
 }
 .sidebar-right {
-  order: 3;
-  flex: 1;
+  order: 2;
+  flex: 2;
 }
