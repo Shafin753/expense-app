@@ -35,7 +35,7 @@ import { MatCardModule } from '@angular/material/card';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    //provideFirebaseApp(() => initializeApp(environment.firbaseConfig)),
+    ////provideFirebaseApp(() => initializeApp(environment.firbaseConfig)),
     //provideFirestore(() => getFirestore()),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule.enablePersistence(),
