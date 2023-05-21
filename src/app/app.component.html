@@ -9,15 +9,21 @@
 
 <body>
   <div class="container">
-    <div style="display: flex"><app-title class="item title"></app-title></div>
-    <div style="  display: flex;
-  flex-direction: row;">
+    <main>
+      <div class="item title"><app-title></app-title></div>
+    </main>
+    <main>
       <header class="item header">Header</header>
       <div class="item bill-entry "><app-bill-entry></app-bill-entry></div>
-    </div>
+    </main>
     <main>
-      <app-expense-table class="item sidebar-left" [billList]="billList"></app-expense-table>
-      <app-bar-chart class="item sidebar-right" [billList]="billList"></app-bar-chart>
+      <div class="item sidebar-left">
+        <app-expense-table [billList]="billList"></app-expense-table>
+      </div>
+      <div class="item sidebar-right">
+        <app-bar-chart [billList]="billList"></app-bar-chart>
+      </div>
+
     </main>
     <footer class="item">Footer</footer>
   </div>
