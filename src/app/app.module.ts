@@ -22,6 +22,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
     MatToolbarModule,
     MatIconModule,
     MatRadioModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

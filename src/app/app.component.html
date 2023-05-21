@@ -1,45 +1,29 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!DOCTYPE html>
+<html>
 
-<!-- <button mat-raised-button color="primary">Primary</button>
-<mat-slide-toggle>Toggle me!</mat-slide-toggle>
-<router-outlet></router-outlet> -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Page Title</title>
+  <!-- Your CSS and other head elements -->
+</head>
 
-<!-- <app-bar-chart></app-bar-chart> -->
-
-<!-- <mat-grid-list cols="4" rowHeight="200px">
-  <mat-grid-tile colspan="4" rowspan="1">
-    <app-bill-entry></app-bill-entry>
-  </mat-grid-tile>
-  <mat-grid-tile colspan="2" rowspan="2"><app-expense-table [billList]="billList"></app-expense-table></mat-grid-tile>
-
-  <mat-grid-tile colspan="2" rowspan="2"><app-bar-chart *ngIf="billList.length > 0"
-      [billList]="billList"></app-bar-chart></mat-grid-tile>
-  <mat-grid-tile>4</mat-grid-tile>
-</mat-grid-list> -->
-
-<div class="container">
-  <div style="display: flex"><app-title class="item" style="width:100%"></app-title></div>
-  <div style="  display: flex;
+<body>
+  <div class="container">
+    <div style="display: flex"><app-title class="item title"></app-title></div>
+    <div style="  display: flex;
   flex-direction: row;">
-    <header class="item header">Header</header>
-    <div class="item bill-entry "><app-bill-entry></app-bill-entry></div>
+      <header class="item header">Header</header>
+      <div class="item bill-entry "><app-bill-entry></app-bill-entry></div>
+    </div>
+
+
+    <main>
+      <app-expense-table class="item sidebar-left" [billList]="billList"></app-expense-table>
+      <app-bar-chart class="item sidebar-right" [billList]="billList"></app-bar-chart>
+    </main>
+    <footer class="item">Footer</footer>
   </div>
+</body>
 
-
-  <main>
-    <app-expense-table class="item sidebar-left" [billList]="billList"></app-expense-table>
-    <app-bar-chart class="item sidebar-right" [billList]="billList"></app-bar-chart>
-    <!-- <article class="item">Article</article> -->
-    <!-- <aside class="item sidebar-left">Left sidebar</aside>
-    <aside class="item sidebar-right">Right sidebar</aside> -->
-  </main>
-  <footer class="item">Footer</footer>
-</div>
-
-<!-- <app-expense-table [billList]="billList"></app-expense-table> -->
+</html>
