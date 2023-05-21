@@ -29,3 +29,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Some Comands for Dev
 
 create component: ng generate component xyz
+
+## How to Commit in master
+
+git add .
+git commit -m "Changes"
+git push origin master
